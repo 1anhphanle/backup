@@ -54,14 +54,6 @@
                             <form:label path="markupRatio" class="form-label">Markup Ratio:</form:label>
                             <form:input path="markupRatio" class="form-control" type="number" step="0.01" />
                         </div>
-                        <div class="mb-3">
-                            <form:label path="image" class="form-label">Image:</form:label>
-                            <form:input path="image" class="form-control" />
-                        </div>
-                        <div class="mb-3 form-check">
-                            <form:checkbox path="status" class="form-check-input" />
-                            <form:label path="status" class="form-check-label">Status</form:label>
-                        </div>
                         <button type="submit" class="btn btn-primary">Create</button>
                     </form:form>
                     <a href="/admin/products" class="btn btn-secondary mt-3">Back to Products</a>

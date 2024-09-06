@@ -78,4 +78,10 @@ public class ProductController {
     // return BigDecimal.ZERO; // Hoặc throw exception
     // }
     // }
+
+    @GetMapping("/price-list")
+    public String showPriceList(Model model) {
+        model.addAttribute("products", productService.getAllProducts());
+        return "admin/product/price-list";
+    }
 }

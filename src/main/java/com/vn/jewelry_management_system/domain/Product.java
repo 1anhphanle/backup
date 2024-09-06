@@ -20,8 +20,6 @@ public class Product {
     private BigDecimal gemstonePrice;
     private BigDecimal costPrice;
     private BigDecimal markupRatio;
-    private String image;
-    private boolean status;
     private BigDecimal sellingPrice;
 
     public int getProductId() {
@@ -94,22 +92,6 @@ public class Product {
 
     public void setMarkupRatio(BigDecimal markupRatio) {
         this.markupRatio = markupRatio;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-
-    public boolean isStatus() {
-        return status;
-    }
-
-    public void setStatus(boolean status) {
-        this.status = status;
     }
 
     public BigDecimal getSellingPrice() {

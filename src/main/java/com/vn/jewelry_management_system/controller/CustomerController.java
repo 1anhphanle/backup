@@ -54,4 +54,5 @@ public class CustomerController {
         customerService.deleteCustomer(id);
         return "redirect:/admin/customers";
     }
+
 }
