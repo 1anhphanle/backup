@@ -24,11 +24,11 @@
                             <form:label path="productType" class="form-label">Product Type:</form:label>
                             <form:select path="productType" class="form-control">
                                 <form:option value="">-- Select Product Type --</form:option>
-                                <c:forEach items="${productTypes}" var="productType">
-                                    <form:option value="${productType.productTypeId}"
-                                        selected="${product.productType.productTypeId == productType.productTypeId}">
-                                        ${productType.productTypeName}</form:option>
-                                </c:forEach>
+                                <form:option value="Nhẫn">Nhẫn</form:option>
+                                <form:option value="Dây Chuyền">Dây Chuyền</form:option>
+                                <form:option value="Bông tai">Bông tai</form:option>
+                                <form:option value="Vòng tay">Vòng tay</form:option>
+                                <form:option value="Mặt dây chuyền">Mặt dây chuyền</form:option>
                             </form:select>
                         </div>
                         <div class="mb-3">

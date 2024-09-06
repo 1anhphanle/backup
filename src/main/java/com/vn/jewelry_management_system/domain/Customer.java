@@ -17,19 +17,6 @@ public class Customer {
     private String email;
     private int loyaltyPoint;
 
-    // Constructors, Getters and Setters
-
-    public Customer() {
-    }
-
-    public Customer(String customerName, String phone, String address, String email, int loyaltyPoint) {
-        this.customerName = customerName;
-        this.phone = phone;
-        this.address = address;
-        this.email = email;
-        this.loyaltyPoint = loyaltyPoint;
-    }
-
     public int getCustomerId() {
         return customerId;
     }
@@ -76,12 +63,5 @@ public class Customer {
 
     public void setLoyaltyPoint(int loyaltyPoint) {
         this.loyaltyPoint = loyaltyPoint;
-    }
-
-    @Override
-    public String toString() {
-        return "Customer [customerId=" + customerId + ", customerName=" + customerName + ", phone=" + phone
-                + ", address="
-                + address + ", email=" + email + ", loyaltyPoint=" + loyaltyPoint + "]";
     }
 }

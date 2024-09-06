@@ -28,20 +28,6 @@ public class Promotion {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date endDate;
 
-    // Constructors, Getters and Setters
-    public Promotion(String promotionName, PromotionType promotionType, String cdt, BigDecimal value, Date startDate,
-            Date endDate) {
-        this.promotionName = promotionName;
-        this.promotionType = promotionType;
-        this.cdt = cdt;
-        this.value = value;
-        this.startDate = startDate;
-        this.endDate = endDate;
-    }
-
-    public Promotion() {
-    }
-
     // Enum cho loại khuyến mãi
     public enum PromotionType {
         PERCENTAGE, AMOUNT

@@ -23,32 +23,7 @@ public class Employee {
 
     @ManyToOne
     @JoinColumn(name = "stall_id")
-    private Stall stall; // Foreign key đến Stall
-
-    // Constructors, Getters and Setters
-
-    public Employee() {
-    }
-
-    // Constructor without stall
-    public Employee(String employeeName, String phone, String address, String position, BigDecimal salary) {
-        this.employeeName = employeeName;
-        this.phone = phone;
-        this.address = address;
-        this.position = position;
-        this.salary = salary;
-    }
-
-    // Constructor with stall
-    public Employee(String employeeName, String phone, String address, String position, BigDecimal salary,
-            Stall stall) {
-        this.employeeName = employeeName;
-        this.phone = phone;
-        this.address = address;
-        this.position = position;
-        this.salary = salary;
-        this.stall = stall;
-    }
+    private Stall stall;
 
     public int getEmployeeId() {
         return employeeId;
@@ -104,12 +79,6 @@ public class Employee {
 
     public void setStall(Stall stall) {
         this.stall = stall;
-    }
-
-    @Override
-    public String toString() {
-        return "Employee [employeeId=" + employeeId + ", employeeName=" + employeeName + ", phone=" + phone
-                + ", address=" + address + ", position=" + position + ", salary=" + salary + "]";
     }
 
 }

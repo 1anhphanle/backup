@@ -33,7 +33,6 @@ public class SalesInvoiceDetailService {
         salesInvoiceDetailRepository.deleteById(id);
     }
 
-    // SalesInvoiceDetailService.java
     public List<SalesInvoiceDetail> getDetailsBySalesInvoiceId(int salesInvoiceId) {
         return salesInvoiceDetailRepository.findAllById_SalesInvoiceId(salesInvoiceId);
     }

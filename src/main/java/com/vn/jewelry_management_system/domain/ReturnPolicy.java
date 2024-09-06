@@ -50,9 +50,4 @@ public class ReturnPolicy {
         this.duration = duration;
     }
 
-    @Override
-    public String toString() {
-        return "ReturnPolicy [returnPolicyId=" + returnPolicyId + ", cdt=" + cdt + ", duration=" + duration + "]";
-    }
-
 }

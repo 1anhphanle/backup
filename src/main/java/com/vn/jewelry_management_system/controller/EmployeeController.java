@@ -32,7 +32,6 @@ public class EmployeeController {
     public String showCreateForm(Model model) {
         model.addAttribute("employee", new Employee());
         model.addAttribute("stalls", stallService.getAllStalls());
-        System.out.println(">>>>>>>>>>>>>>>" + stallService.getAllStalls());
         return "admin/employee/create";
     }
 
@@ -56,15 +55,12 @@ public class EmployeeController {
         Optional<Employee> employee = employeeService.getEmployeeById(id);
         model.addAttribute("employee", employee.orElse(null));
         model.addAttribute("stalls", stallService.getAllStalls());
-        System.out.println(">>>>>>>>>>>>>>>" + stallService.getAllStalls());
-
         return "admin/employee/edit";
     }
 
     @PostMapping("/edit/{id}")
     public String updateEmployee(@PathVariable("id") int id, @ModelAttribute("employee") Employee employee) {
         employee.setEmployeeId(id);
-        // Tương tự như createEmployee, bạn cũng cần xử lý stall trong updateEmployee
         int stallId = employee.getStall().getStallId();
         Optional<Stall> stall = stallService.getStallById(stallId);
         stall.ifPresent(employee::setStall);

@@ -21,23 +21,9 @@ public class GoldPrice {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date updateDate;
 
-    private String goldName; // Thêm trường goldName
-    private BigDecimal buyingPrice; // Thêm trường buyingPrice
-    private BigDecimal sellingPrice; // Đổi tên goldPrice thành sellingPrice
-
-    // Constructors, Getters and Setters
-
-    public GoldPrice() {
-    }
-
-    public GoldPrice(Date updateDate, String goldName, BigDecimal buyingPrice, BigDecimal sellingPrice) {
-        this.updateDate = updateDate;
-        this.goldName = goldName;
-        this.buyingPrice = buyingPrice;
-        this.sellingPrice = sellingPrice;
-    }
-
-    // Getters and Setters
+    private String goldName;
+    private BigDecimal buyingPrice;
+    private BigDecimal sellingPrice;
 
     public int getGoldPriceId() {
         return goldPriceId;
@@ -78,4 +64,5 @@ public class GoldPrice {
     public void setSellingPrice(BigDecimal sellingPrice) {
         this.sellingPrice = sellingPrice;
     }
+
 }

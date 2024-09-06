@@ -23,7 +23,6 @@
                             <th>Product</th>
                             <th>Quantity</th>
                             <th>Unit Price</th>
-                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -33,13 +32,6 @@
                                 <td>${detail.product.productName}</td>
                                 <td>${detail.quantity}</td>
                                 <td>${detail.unitPrice}</td>
-                                <td>
-                                    <a href="/admin/sales-invoice-details/edit/${detail.id.salesInvoiceId}/${detail.id.productId}"
-                                        class="btn btn-warning btn-sm">Edit</a>
-                                    <a href="/admin/sales-invoice-details/delete/${detail.id.salesInvoiceId}/${detail.id.productId}"
-                                        class="btn btn-danger btn-sm"
-                                        onclick="return confirm('Are you sure you want to delete this sales invoice detail?')">Delete</a>
-                                </td>
                             </tr>
                         </c:forEach>
                     </tbody>

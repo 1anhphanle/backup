@@ -4,8 +4,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import java.math.BigDecimal;
 
 @Entity
@@ -15,11 +13,7 @@ public class Product {
     private int productId;
 
     private String productName;
-
-    @ManyToOne
-    @JoinColumn(name = "product_type_id")
-    ProductType productType;
-
+    private String productType;
     private BigDecimal weight;
     private String material;
     private BigDecimal makingFee;
@@ -28,50 +22,7 @@ public class Product {
     private BigDecimal markupRatio;
     private String image;
     private boolean status;
-
     private BigDecimal sellingPrice;
-
-    public BigDecimal getSellingPrice() {
-        return sellingPrice;
-    }
-
-    public void setSellingPrice(BigDecimal sellingPrice) {
-        this.sellingPrice = sellingPrice;
-    }
-    // Constructors, Getters and Setters
-
-    public Product() {
-    }
-
-    // Constructor without productType
-    public Product(String productName, BigDecimal weight, String material, BigDecimal makingFee,
-            BigDecimal gemstonePrice, BigDecimal costPrice, BigDecimal markupRatio, String image, boolean status) {
-        this.productName = productName;
-        this.weight = weight;
-        this.material = material;
-        this.makingFee = makingFee;
-        this.gemstonePrice = gemstonePrice;
-        this.costPrice = costPrice;
-        this.markupRatio = markupRatio;
-        this.image = image;
-        this.status = status;
-    }
-
-    // Constructor with productType
-    public Product(String productName, ProductType productType, BigDecimal weight, String material,
-            BigDecimal makingFee,
-            BigDecimal gemstonePrice, BigDecimal costPrice, BigDecimal markupRatio, String image, boolean status) {
-        this.productName = productName;
-        this.productType = productType;
-        this.weight = weight;
-        this.material = material;
-        this.makingFee = makingFee;
-        this.gemstonePrice = gemstonePrice;
-        this.costPrice = costPrice;
-        this.markupRatio = markupRatio;
-        this.image = image;
-        this.status = status;
-    }
 
     public int getProductId() {
         return productId;
@@ -89,11 +40,11 @@ public class Product {
         this.productName = productName;
     }
 
-    public ProductType getProductType() {
+    public String getProductType() {
         return productType;
     }
 
-    public void setProductType(ProductType productType) {
+    public void setProductType(String productType) {
         this.productType = productType;
     }
 
@@ -161,11 +112,12 @@ public class Product {
         this.status = status;
     }
 
-    @Override
-    public String toString() {
-        return "Product [productId=" + productId + ", productName=" + productName + ", weight=" + weight + ", material="
-                + material + ", makingFee=" + makingFee + ", gemstonePrice=" + gemstonePrice + ", costPrice="
-                + costPrice + ", markupRatio=" + markupRatio + ", image=" + image + ", status=" + status + "]";
+    public BigDecimal getSellingPrice() {
+        return sellingPrice;
+    }
+
+    public void setSellingPrice(BigDecimal sellingPrice) {
+        this.sellingPrice = sellingPrice;
     }
 
 }

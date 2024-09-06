@@ -17,7 +17,6 @@ public class GoldPriceService {
         this.goldPriceRepository = goldPriceRepository;
     }
 
-    // GoldPriceService.java
     public BigDecimal getLatestBuyingPrice() {
         return goldPriceRepository.findLatestBuyingPrice()
                 .orElseThrow(() -> new RuntimeException("Không tìm thấy giá mua mới nhất!"));

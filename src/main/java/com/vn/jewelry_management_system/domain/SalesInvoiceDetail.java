@@ -19,19 +19,6 @@ public class SalesInvoiceDetail {
     @MapsId("productId")
     private Product product;
 
-    // Constructors, Getters and Setters
-
-    public SalesInvoiceDetail() {
-    }
-
-    public SalesInvoiceDetail(SalesInvoice salesInvoice, Product product, int quantity, BigDecimal unitPrice) {
-        this.id = new SalesInvoiceDetailId(salesInvoice.getSalesInvoiceId(), product.getProductId());
-        this.salesInvoice = salesInvoice;
-        this.product = product;
-        this.quantity = quantity;
-        this.unitPrice = unitPrice;
-    }
-
     public SalesInvoiceDetailId getId() {
         return id;
     }

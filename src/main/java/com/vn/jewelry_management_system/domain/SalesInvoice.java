@@ -3,7 +3,6 @@ package com.vn.jewelry_management_system.domain;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
-
 import java.util.List;
 import java.util.ArrayList;
 
@@ -36,34 +35,9 @@ public class SalesInvoice {
     private BigDecimal discount;
     private String paymentMethod;
 
-    // SalesInvoice.java
     @ManyToMany
     @JoinTable(name = "sales_invoice_promotion", joinColumns = @JoinColumn(name = "sales_invoice_id"), inverseJoinColumns = @JoinColumn(name = "promotion_id"))
     private List<Promotion> promotions = new ArrayList<>();
-
-    // Constructors, Getters and Setters
-
-    public SalesInvoice() {
-    }
-
-    public SalesInvoice(Customer customer, Employee employee, Stall stall, BigDecimal totalAmount, BigDecimal discount,
-            String paymentMethod) {
-        this.customer = customer;
-        this.employee = employee;
-        this.stall = stall;
-        this.totalAmount = totalAmount;
-        this.discount = discount;
-        this.paymentMethod = paymentMethod;
-    }
-
-    // Getter and Setter cho salesInvoiceDetails
-    public List<SalesInvoiceDetail> getSalesInvoiceDetails() {
-        return salesInvoiceDetails;
-    }
-
-    public void setSalesInvoiceDetails(List<SalesInvoiceDetail> salesInvoiceDetails) {
-        this.salesInvoiceDetails = salesInvoiceDetails;
-    }
 
     public int getSalesInvoiceId() {
         return salesInvoiceId;
@@ -71,6 +45,14 @@ public class SalesInvoice {
 
     public void setSalesInvoiceId(int salesInvoiceId) {
         this.salesInvoiceId = salesInvoiceId;
+    }
+
+    public List<SalesInvoiceDetail> getSalesInvoiceDetails() {
+        return salesInvoiceDetails;
+    }
+
+    public void setSalesInvoiceDetails(List<SalesInvoiceDetail> salesInvoiceDetails) {
+        this.salesInvoiceDetails = salesInvoiceDetails;
     }
 
     public Date getCreatedDate() {

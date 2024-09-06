@@ -59,7 +59,6 @@ public class GoldPriceController {
         return "redirect:/admin/gold-prices";
     }
 
-    // GoldPriceController.java
     @GetMapping("/display")
     public String displayGoldPrices(Model model) {
         List<GoldPrice> goldPrices = goldPriceService.getAllGoldPrices();

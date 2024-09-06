@@ -37,7 +37,7 @@
                             <tr>
                                 <td>${product.productId}</td>
                                 <td>${product.productName}</td>
-                                <td>${product.productType.productTypeName}</td>
+                                <td>${product.productType}</td>
                                 <td>${product.weight}</td>
                                 <td>${product.material}</td>
                                 <td>${product.makingFee}</td>
