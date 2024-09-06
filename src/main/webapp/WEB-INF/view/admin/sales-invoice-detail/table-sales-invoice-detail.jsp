@@ -14,8 +14,6 @@
         <body>
             <div class="container mt-5">
                 <h1>Sales Invoice Details</h1>
-                <a href="/admin/sales-invoice-details/create" class="btn btn-primary mb-3">Create New Sales Invoice
-                    Detail</a>
                 <table class="table table-striped">
                     <thead>
                         <tr>

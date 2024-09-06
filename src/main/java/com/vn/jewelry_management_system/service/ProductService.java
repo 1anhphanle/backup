@@ -34,6 +34,21 @@ public class ProductService {
         return sellingPrice;
     }
 
+    public BigDecimal calculateBuybackPrice(Product product) {
+        // Lấy giá mua vàng hiện tại
+        BigDecimal goldBuyingPrice = goldPriceService.getLatestBuyingPrice();
+
+        // Tính giá vốn sản phẩm
+        BigDecimal costPrice = goldBuyingPrice.multiply(product.getWeight())
+                .add(product.getMakingFee())
+                .add(product.getGemstonePrice());
+
+        // Tính giá mua lại (90% giá vốn)
+        BigDecimal buybackPrice = costPrice.multiply(new BigDecimal("0.9"));
+
+        return buybackPrice;
+    }
+
     public List<Product> getAllProducts() {
         return productRepository.findAll();
     }

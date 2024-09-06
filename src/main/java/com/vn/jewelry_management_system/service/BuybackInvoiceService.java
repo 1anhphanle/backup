@@ -3,7 +3,6 @@ package com.vn.jewelry_management_system.service;
 import org.springframework.stereotype.Service;
 import com.vn.jewelry_management_system.domain.BuybackInvoice;
 import com.vn.jewelry_management_system.repository.BuybackInvoiceRepository;
-
 import java.util.List;
 import java.util.Optional;
 

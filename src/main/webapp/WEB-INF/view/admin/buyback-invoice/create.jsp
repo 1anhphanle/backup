@@ -20,7 +20,7 @@
                             <form:select path="customer" class="form-select">
                                 <form:option value="">-- Select Customer --</form:option>
                                 <c:forEach items="${customers}" var="customer">
-                                    <form:option value="${customer.customerId}">${customer.customerName}</form:option>
+                                    <form:option value="${customer}">${customer.customerName}</form:option>
                                 </c:forEach>
                             </form:select>
                         </div>
@@ -29,7 +29,7 @@
                             <form:select path="employee" class="form-select">
                                 <form:option value="">-- Select Employee --</form:option>
                                 <c:forEach items="${employees}" var="employee">
-                                    <form:option value="${employee.employeeId}">${employee.employeeName}</form:option>
+                                    <form:option value="${employee}">${employee.employeeName}</form:option>
                                 </c:forEach>
                             </form:select>
                         </div>
@@ -38,14 +38,15 @@
                             <form:select path="stall" class="form-select">
                                 <form:option value="">-- Select Stall --</form:option>
                                 <c:forEach items="${stalls}" var="stall">
-                                    <form:option value="${stall.stallId}">${stall.stallName}</form:option>
+                                    <form:option value="${stall}">${stall.stallName}</form:option>
                                 </c:forEach>
                             </form:select>
                         </div>
                         <div class="mb-3">
-                            <form:label path="totalAmount" class="form-label">Total Amount:</form:label>
-                            <form:input path="totalAmount" class="form-control" type="number" step="0.01" />
+                            <label for="salesInvoiceId" class="form-label">Sales Invoice ID:</label>
+                            <input type="number" class="form-control" id="salesInvoiceId" name="salesInvoiceId">
                         </div>
+
                         <button type="submit" class="btn btn-primary">Create</button>
                     </form:form>
                     <a href="/admin/buyback-invoices" class="btn btn-secondary mt-3">Back to Buyback Invoices</a>

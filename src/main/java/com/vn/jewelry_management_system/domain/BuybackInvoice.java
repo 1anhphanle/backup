@@ -1,3 +1,4 @@
+// BuybackInvoice.java
 package com.vn.jewelry_management_system.domain;
 
 import jakarta.persistence.*;
@@ -26,6 +27,10 @@ public class BuybackInvoice {
     @JoinColumn(name = "stall_id")
     private Stall stall;
 
+    @ManyToOne
+    @JoinColumn(name = "sales_invoice_id") // Thêm trường salesInvoice
+    private SalesInvoice salesInvoice; // Liên kết với hóa đơn bán
+
     private BigDecimal totalAmount;
 
     // Constructors, Getters and Setters
@@ -33,10 +38,13 @@ public class BuybackInvoice {
     public BuybackInvoice() {
     }
 
-    public BuybackInvoice(Customer customer, Employee employee, Stall stall, BigDecimal totalAmount) {
+    // Constructor
+    public BuybackInvoice(Customer customer, Employee employee, Stall stall, SalesInvoice salesInvoice,
+            BigDecimal totalAmount) {
         this.customer = customer;
         this.employee = employee;
         this.stall = stall;
+        this.salesInvoice = salesInvoice;
         this.totalAmount = totalAmount;
     }
 
@@ -78,6 +86,14 @@ public class BuybackInvoice {
 
     public void setStall(Stall stall) {
         this.stall = stall;
+    }
+
+    public SalesInvoice getSalesInvoice() {
+        return salesInvoice;
+    }
+
+    public void setSalesInvoice(SalesInvoice salesInvoice) {
+        this.salesInvoice = salesInvoice;
     }
 
     public BigDecimal getTotalAmount() {
