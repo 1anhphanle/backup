@@ -29,4 +29,8 @@ public class BuybackInvoiceService {
     public void deleteBuybackInvoice(int id) {
         buybackInvoiceRepository.deleteById(id);
     }
+
+    public long countBuybackInvoices() {
+        return buybackInvoiceRepository.count();
+    }
 }

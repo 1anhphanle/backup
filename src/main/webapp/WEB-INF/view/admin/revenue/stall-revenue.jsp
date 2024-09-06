@@ -6,36 +6,31 @@
 
             <head>
                 <meta charset="UTF-8">
-                <title>Bảng Giá Hàng Hóa</title>
+                <title>Revenue by Stall</title>
                 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
                 <link rel="stylesheet" href="/css/style-dashboard.css">
                 <link rel="stylesheet" href="/css/mini.css">
-                <style>
-                    /* ... (CSS styles) */
-                </style>
             </head>
 
             <body>
                 <jsp:include page="../menu.jsp" />
 
                 <div class="container mt-5">
-                    <h1>Bảng Giá Hàng Hóa</h1>
-                    <table class="table table-striped table-bordered">
+                    <h1>Revenue by Stall</h1>
+                    <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th>Tên Sản Phẩm</th>
-                                <th>Loại Sản Phẩm</th>
-                                <th>Giá Bán</th>
+                                <th>Stall Name</th>
+                                <th>Total Revenue</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <c:forEach items="${products}" var="product">
+                            <c:forEach items="${revenueByStall}" var="entry">
                                 <tr>
-                                    <td>${product.productName}</td>
-                                    <td>${product.productType}</td>
+                                    <td>${entry.key.stallName}</td>
                                     <td>
-                                        <fmt:formatNumber value="${product.sellingPrice}" pattern="#,###" /> VND
+                                        <fmt:formatNumber value="${entry.value}" pattern="#,###" /> VND
                                     </td>
                                 </tr>
                             </c:forEach>

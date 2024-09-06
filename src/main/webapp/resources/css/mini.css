@@ -1,0 +1,24 @@
+.container {
+    max-width: 800px;
+    /* Giới hạn chiều rộng tối đa của container */
+    margin: 0 auto;
+    /* Căn giữa container */
+}
+
+.content {
+    margin-left: 0;
+    /* Loại bỏ khoảng cách cho sidebar */
+    padding: 20px;
+}
+
+/* Thêm padding cho form để nội dung không bị sát mép */
+.form-control {
+    padding: 10px;
+}
+
+/* Giảm kích thước font chữ cho các phần tử trong form */
+.form-label,
+.form-select,
+.btn {
+    font-size: 14px;
+}

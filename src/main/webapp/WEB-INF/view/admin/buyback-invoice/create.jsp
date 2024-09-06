@@ -9,9 +9,12 @@
                 <title>Create Buyback Invoice</title>
                 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+                <link rel="stylesheet" href="/css/style-dashboard.css">
+                <link rel="stylesheet" href="/css/mini.css">
             </head>
 
             <body>
+                <jsp:include page="../menu.jsp" />
                 <div class="container mt-5">
                     <h1>Create Buyback Invoice</h1>
                     <form:form method="POST" action="/admin/buyback-invoices/create" modelAttribute="buybackInvoice">
